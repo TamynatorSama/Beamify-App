@@ -22,6 +22,11 @@ class AppTheme {
     fontWeight: FontWeight.w500,
     fontSize: 16
   );
+  static TextStyle bodyTextLight = GoogleFonts.lato(
+    color: const Color(0xff8a8b8e),
+    fontWeight: FontWeight.w500,
+    fontSize: 16
+  );
   static TextStyle buttonStyle = GoogleFonts.lato(
     color: Colors.black,
     fontWeight: FontWeight.w600,

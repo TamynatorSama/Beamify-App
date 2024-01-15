@@ -1,4 +1,5 @@
 import 'package:beamify_app/pages/authFlow/signup.dart';
+import 'package:beamify_app/pages/home/home.dart';
 import 'package:beamify_app/shared/utils/app_theme.dart';
 import 'package:beamify_app/shared/utils/custom_button.dart';
 import 'package:beamify_app/shared/utils/custom_input_field.dart';
@@ -89,7 +90,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                           CustomButton(
                               text: "Sign in",
                               onTap: () {
-                               
+                               Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const HomePage()));
                               }),
                           const SizedBox(
                             height: 25,
