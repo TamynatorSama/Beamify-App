@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 Widget logo() {
   return Column(
+    mainAxisSize: MainAxisSize.min,
     children: [
       SvgPicture.asset("assets/icons/logo_track.svg",width: 160,),
       const SizedBox(height: 15,),

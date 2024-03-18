@@ -1,4 +1,5 @@
 import 'package:beamify_app/pages/channel/channel_view.dart';
+import 'package:beamify_app/pages/streaming/streaming_page.dart';
 import 'package:beamify_app/shared/utils/app_theme.dart';
 import 'package:beamify_app/shared/utils/custom_input_field.dart';
 import 'package:flutter/material.dart';
@@ -280,7 +281,10 @@ class _HomePage extends State<HomePage> {
         ));
   }
 
-  Widget _eventBuilder(Map<String, dynamic> data) => Row(
+  Widget _eventBuilder(Map<String, dynamic> data) => GestureDetector(
+    onTap: ()=>Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) => StreamingPage(data: data,))),
+    child: Row(
         children: [
           Container(
             height: 55,
@@ -319,7 +323,8 @@ class _HomePage extends State<HomePage> {
             child: SvgPicture.asset("assets/icons/play.svg"),
           )
         ],
-      );
+      ),
+  );
 
   Widget _buildChannelCard(BuildContext context, Map<String, dynamic> data) {
     double imageSize = MediaQuery.of(context).size.width * 0.45;
