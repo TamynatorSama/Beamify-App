@@ -51,14 +51,20 @@ class WebRtcTest {
         "pod_id": globalPodId,
         "sdpAnswer": answer.toMap(),
       });
+      setupConnect();
     });
   }
 
   static setupConnect() {
     remoteRTCVideoRenderer.initialize();
-    WebRtcTest.rtcPeerConnection!.onTrack = (event) {
-      print("gottenRemoteTrack");
+    rtcPeerConnection!.onAddStream = (event) {
+      print("object object lets party object");
       print(event);
+    };
+    rtcPeerConnection!.onTrack = (event) {
+      print("gottenRemoteTrack SO LET'S PARTY HARRRRRDDDDD!!!!");
+      // print(event);
+      // print(event.streams[0].getAudioTracks()[0]);
       remoteRTCVideoRenderer.srcObject = event.streams[0];
     };
   }
@@ -70,13 +76,24 @@ class WebRtcTest {
         {
           'urls': [
             'stun:stun1.l.google.com:19302',
-            'stun:stun2A.l.google.com:19302'
+            'stun:stun2A.l.google.com:19302',
+            {
+    'url': 'turn:turn.bistri.com:80',
+    'credential': 'homeo',
+    'username': 'homeo'
+ },
+ {
+    'url': 'turn:turn.anyfirewall.com:443?transport=tcp',
+    'credential': 'webrtc',
+    'username': 'webrtc'
+}
           ]
         }
       ]
     });
-    setupConnect();
-
+    rtcPeerConnection!.onTrack = (tracks) {
+      print("recieved tracks");
+    };
     manageConnection();
   }
 }
