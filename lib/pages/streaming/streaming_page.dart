@@ -1,7 +1,8 @@
 import 'package:beamify_app/pages/streaming/widgets/seek.dart';
+import 'package:beamify_app/repository/signalling/firebase_signalling.dart';
+import 'package:beamify_app/repository/signalling/signalling_repository.dart';
 import 'package:beamify_app/shared/logo.dart';
 import 'package:beamify_app/shared/utils/app_theme.dart';
-import 'package:beamify_app/shared/utils/test_signal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
@@ -23,21 +24,21 @@ class _StreamingPage extends State<StreamingPage>
   double expandedPadding = 60;
   Animation<double>? animatedHeight;
 
+  late ISignalling signalling;
+
   late AnimationController transcriptHolderController;
-
-
 
   @override
   void initState() {
-    WebRtcTest.joinPod("samuel");
+    signalling = FirebaseSignalling();
+    signalling.joinPod("xRXiY8qzrV6IQWfewani");
+
     transcriptHolderController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 200))
       ..addListener(updateExpandedHeighWithAnimation);
-    
+
     super.initState();
   }
-
-  
 
   updateExpandedHeighWithAnimation() {
     if (animatedHeight != null &&
@@ -212,7 +213,9 @@ class _StreamingPage extends State<StreamingPage>
               )
             ],
           ),
-        )
+        ),
+        if ((signalling as FirebaseSignalling).remoteRenderer != null)
+          RTCVideoView((signalling as FirebaseSignalling).remoteRenderer!)
       ],
     ));
   }

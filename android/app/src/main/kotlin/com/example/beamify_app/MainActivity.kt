@@ -1,4 +1,4 @@
-package com.example.beamify_app
+package com.example.beamify
 
 import io.flutter.embedding.android.FlutterActivity
 
