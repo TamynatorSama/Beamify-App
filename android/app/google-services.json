@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1015995779792",
+    "project_id": "afm-conference",
+    "storage_bucket": "afm-conference.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015995779792:android:20d2e5ffeb5e7fa403ecd5",
+        "android_client_info": {
+          "package_name": "com.example.beamify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpqV8nf8hokqA0BDmRMukEmopI2cEWPAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015995779792:android:dc62e79db337281803ecd5",
+        "android_client_info": {
+          "package_name": "com.example.beamify_creator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpqV8nf8hokqA0BDmRMukEmopI2cEWPAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015995779792:android:943a305a2b5b9aa203ecd5",
+        "android_client_info": {
+          "package_name": "com.monie_tracka.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpqV8nf8hokqA0BDmRMukEmopI2cEWPAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
